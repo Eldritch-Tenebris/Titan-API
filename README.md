@@ -1,10 +1,10 @@
-# 🚀 API RESTful com Node.js e TypeScript
+# 🚀 Titan API - API RESTful com Node.js e TypeScript
 
 Uma API RESTful robusta e escalável construída com Node.js e TypeScript, focada em boas práticas de desenvolvimento e padrões de projeto modernos.
 
 ## 💡 Sobre o Projeto
 
-Esta API foi desenvolvida para servir como um boilerplate completo para aplicações RESTful, implementando:
+Este projeto serve como um boilerplate para APIs RESTful, incluindo as seguintes funcionalidades:
 
 - Arquitetura em camadas (Controllers, Services, Models)
 - Autenticação segura com JWT
@@ -15,16 +15,17 @@ Esta API foi desenvolvida para servir como um boilerplate completo para aplicaç
 - Logging e monitoramento
 - Segurança aprimorada
 
-## 📋 Índice
+## 🗉 Índice
 
-- [Funcionalidades](#-funcionalidades)
-- [Stack Tecnológico](#-stack-tecnológico)
-- [Começando](#-começando)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [API Endpoints](#-api-endpoints)
-- [Segurança](#-segurança)
-- [Testes](#-testes)
-- [Deploy](#-deploy)
+- [🏷️ Funcionalidades](#-funcionalidades)
+- [🛠️ Stack Tecnológico](#-stack-tecnologico)
+- [🚀 Começando](#-comecando)
+- [📁 Estrutura do Projeto](#-estrutura-do-projeto)
+- [🛡️ API Endpoints](#-api-endpoints)
+- [🔒 Segurança](#-seguranca)
+- [🧬 Testes](#-testes)
+- [📈 Monitoramento](#-monitoramento)
+- [🚀 Deploy](#-deploy)
 
 ## ✨ Funcionalidades
 
@@ -38,22 +39,21 @@ Esta API foi desenvolvida para servir como um boilerplate completo para aplicaç
 - CRUD completo
 - Upload de avatar
 - Recuperação de senha
-- Validação de email
+- Validação de e-mail
 
-### 📊 Features Adicionais
+### 📊 Recursos Adicionais
 - Rate limiting
 - Logs estruturados
 - Cache com Redis
 - Compressão de resposta
 - CORS configurável
-- Validação de dados
 - Sanitização de entrada
 - Paginação de resultados
 
-## 🛠 Stack Tecnológico
+## 🛠️ Stack Tecnológico
 
-### 🔧 Core
-- Node.js (v14+)
+### 🛠️ Core
+- Node.js (v18+)
 - TypeScript 4.x
 - Express.js
 - PostgreSQL
@@ -63,16 +63,16 @@ Esta API foi desenvolvida para servir como um boilerplate completo para aplicaç
 ```json
 {
   "dependencies": {
-    "express": "^4.17.1",
-    "typescript": "^4.5.4",
-    "sequelize": "^6.6.5",
-    "jsonwebtoken": "^8.5.1",
+    "express": "^4.18.2",
+    "typescript": "^4.9.5",
+    "sequelize": "^6.29.3",
+    "jsonwebtoken": "^9.0.0",
     "bcryptjs": "^2.4.3",
-    "express-validator": "^6.12.1",
-    "swagger-ui-express": "^4.1.6",
-    "winston": "^3.3.3",
+    "express-validator": "^7.0.1",
+    "swagger-ui-express": "^5.0.0",
+    "winston": "^3.8.2",
     "cors": "^2.8.5",
-    "helmet": "^4.6.0",
+    "helmet": "^5.1.0",
     "compression": "^1.7.4",
     "morgan": "^1.10.0"
   }
@@ -82,18 +82,17 @@ Esta API foi desenvolvida para servir como um boilerplate completo para aplicaç
 ## 🚀 Começando
 
 ### Pré-requisitos
-
 ```bash
-node -v  # v14.x ou superior
-npm -v   # 6.x ou superior
+node -v  # v18.x ou superior
+npm -v   # 8.x ou superior
 ```
 
 ### Instalação
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/api-rest-typescript.git
-cd api-rest-typescript
+git clone https://github.com/seu-usuario/titan-api.git
+cd titan-api
 ```
 
 2. Instale as dependências:
@@ -117,99 +116,6 @@ npm run db:seed
 ```bash
 npm run dev
 ```
-
-## 📁 Estrutura do Projeto
-
-```
-src/
-├── config/               # Configurações
-│   ├── database.ts      # Config do banco
-│   ├── cache.ts         # Config do Redis
-│   └── logger.ts        # Config de logs
-├── controllers/         # Controllers da API
-├── services/           # Lógica de negócio
-├── models/             # Modelos do banco
-├── middlewares/        # Middlewares Express
-├── routes/             # Rotas da API
-├── utils/              # Utilitários
-├── validators/         # Validadores
-└── types/              # Tipos TypeScript
-```
-
-## 🔗 API Endpoints
-
-### 🔐 Autenticação
-```
-POST   /api/auth/register     - Registro
-POST   /api/auth/login        - Login
-POST   /api/auth/refresh      - Refresh token
-POST   /api/auth/logout       - Logout
-POST   /api/auth/forgot       - Esqueci senha
-POST   /api/auth/reset       - Reset senha
-```
-
-### 👤 Usuários
-```
-GET    /api/users            - Lista usuários
-GET    /api/users/:id        - Obtém usuário
-PUT    /api/users/:id        - Atualiza usuário
-DELETE /api/users/:id        - Remove usuário
-PATCH  /api/users/:id/avatar - Upload avatar
-```
-
-## 🔒 Segurança
-
-- Proteção contra:
-  - XSS
-  - CSRF
-  - SQL Injection
-  - NoSQL Injection
-  - Brute Force
-  - Rate Limiting
-  - Parameter Pollution
-
-## 🧪 Testes
-
-```bash
-# Testes unitários
-npm run test:unit
-
-# Testes de integração
-npm run test:integration
-
-# Todos os testes com cobertura
-npm run test:coverage
-```
-
-## 📊 Monitoramento
-
-- Winston para logs
-- Morgan para HTTP logging
-- Sentry para error tracking
-- Prometheus + Grafana (opcional)
-
-## 🚀 Deploy
-
-Suporte para múltiplos ambientes:
-
-```bash
-# Desenvolvimento
-npm run dev
-
-# Homologação
-npm run staging
-
-# Produção
-npm start
-```
-
-## 🤝 Contribuindo
-
-1. Fork o projeto
-2. Crie sua feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
 
 ## 📝 Licença
 
